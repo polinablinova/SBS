@@ -1,0 +1,18 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Numerical simulations of laser pulse compression in gases
+  via stimulated Brillouin scattering (SBS)
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Polina
+    family-names: Blinova
+    email: pb466@cornell.edu
+    affiliation: Cornell University
+    orcid: 'https://orcid.org/0009-0000-1620-6239'
+repository-code: 'https://github.com/polinablinova/SBS'
