@@ -32,7 +32,9 @@ and the simulation is ran either with
 brillouin_push(l, a)
 ```
 or with
+```
 plasmanik_push(l, a)
+```
 where the second version assumes that a steady-state in the acoustic field has been reached. a is the gain factor, which is equal to half the product of the Brillouin linewidth and Brillouin gain g.
 ## aKin.zip: averaged Particle-In-Cell solution
 See https://pubs.aip.org/aip/pop/article/11/11/5204/261409/Slowly-varying-envelope-kinetic-simulations-of for the model used. The program (aKin.zip) consists of three files: **damped_pondermotive.m**, **solve_tridiag.m**, and **continuous_pump.m**.
