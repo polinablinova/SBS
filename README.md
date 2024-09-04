@@ -6,13 +6,13 @@ See https://ieeexplore.ieee.org/document/806589 for the model used. The program 
 This file includes the definition for the class LASER, which holds all simulation parameters for SBS run. The main simulation function, and all helper function use this class to reduce the number of used parameters. LASER is compiled with numba’s @jitclass. This class initializes pump and stokes pulses. All real attributes are stored in single-precision floating-point format (float32), and pump and stokes pulses are stored as double-precision complex numbers (complex128). At the beginning of each simulation, a LASER object is initialized and used throughout the simulation.
 ### brillouin_pusher.py
 This is the main simulation file. It implements the function brillouin_push which calculates each step of pump and stokes propagation through the Brillouin-active medium using the split-step-fourier-method (SSFM). The pseudo-code for the SSFM process is as follows:<br />
-(1) Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first column<br />
-(2) Apply aliasing filter to the gain function and the temporal frequencies that will be used throughout all steps<br />
-(3) Enter outer time loop<br />
-    – Fix boundaries at zero<br />
-    – Apply aliasing filter to pump, stokes, and spatial frequencies<br />
-    – Compute the effect of propagating operator, and store in history arrays<br />
-    – Create array for convolution integral calculations<br />
+1. Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first column<br />
+2. Apply aliasing filter to the gain function and the temporal frequencies that will be used throughout all steps<br />
+3. Enter outer time loop<br />
+     – Fix boundaries at zero<br />
+     – Apply aliasing filter to pump, stokes, and spatial frequencies<br />
+     – Compute the effect of propagating operator, and store in history arrays<br />
+     – Create array for convolution integral calculations<br />
       Enter inner space loop<br />
         ∗ Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
     – Apply nonlinearity operator to A1, A2, and store results in history arrays<br />
