@@ -14,7 +14,7 @@ This is the main simulation file. It implements the function brillouin_push whic
      - Compute the effect of propagating operator, and store in history arrays<br />
      - Create array for convolution integral calculations<br />
      - Enter inner space loop<br />
-               ∗ Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
+       ∗ Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
      - Apply nonlinearity operator to A1, A2, and store results in history arrays<br />
 ### simulator.py
 Using simulator.py, the laser object can be initialized. For example,
@@ -49,7 +49,7 @@ The method employs an RK4 solver for particles and solves laser evolution using 
     - Enter the spatial loop<br />
          * Calculate pondermotive phase (same for each laser gridpoint) and currents<br />
          * Enter the particle loop<br />
-           ** Solve the equation of motion of each particle using RK4.<br />
+                ** Solve the equation of motion of each particle using RK4.<br />
     - Propagate lasers<br />
 ### solve_tridiag.m
 A simple tridiagonal solver used as a helper function in dampled_pondermotive.m
