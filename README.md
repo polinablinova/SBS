@@ -4,7 +4,7 @@ Numerical simulations of laser pulse compression in gases via stimulated Brillou
 See https://ieeexplore.ieee.org/document/806589 for the model used. The program (SSFM.zip) consists of three files: **LASER.py**, **brillouin_pusher.py**, and **simulator.py**, which implement the simulation parameter class, helper functions, and the simulation function call repectively. The class file and the simulation file are detailed below. simulator.py simply exectutes all the function calls defined in the two other files.
 ### LASER.py
 This file includes the definition for the class LASER, which holds all simulation parameters for SBS run. The main simulation function, and all helper function use this class to reduce the number of used parameters. LASER is compiled with numba’s @jitclass. This class initializes two pump and stokes pulses to be later used in simulation.
-**Attributes**
+**Attributes**\\
 xmax, tmax: maximum spatial/temporal window size
 xgrid, tgrid: spatial/temporal step
 sigp, sigs: width of pump/stokes pulse (in step units)
