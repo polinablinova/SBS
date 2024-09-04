@@ -14,7 +14,7 @@ This is the main simulation file. It implements the function brillouin_push whic
      - Compute the effect of propagating operator, and store in history arrays<br />
      - Create array for convolution integral calculations<br />
      - Enter inner space loop<br />
-               * Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
+          * Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
      - Apply nonlinearity operator to A1, A2, and store results in history arrays<br />
 ### simulator.py
 Using simulator.py, the laser object can be initialized. For example,
