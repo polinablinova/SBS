@@ -1,5 +1,5 @@
 # SBS
-Numerical simulations of laser pulse compression in gases via stimulated Brillouin scattering (SBS). 
+Numerical simulations of laser pulse compression in gases via stimulated Brillouin scattering (SBS). Three different simulations are implemented and documented below: pseudospectral simulation (SSFM.zip), averaged kinetic simulation (aKin.zip), and a three-wave solution (WAV3.zip)
 ## Split-Step Fourier Method Solution for Transient SBS
 See https://ieeexplore.ieee.org/document/806589 for the model used. The program (SSFM.zip) consists of three files: **LASER.py**, **brillouin_pusher.py**, and **simulator.py**, which implement the simulation parameter class, helper functions, and the simulation function call repectively. The class file and the simulation file are detailed below. simulator.py simply exectutes all the function calls defined in the two other files.
 ### LASER.py
