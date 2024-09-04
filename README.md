@@ -35,7 +35,7 @@ or with
 plasmanik_push(l, a)
 where the second version assumes that a steady-state in the acoustic field has been reached. a is the gain factor, which is equal to half the product of the Brillouin linewidth and Brillouin gain g.
 ## aKin.zip: averaged Particle-In-Cell solution
-See https://pubs.aip.org/aip/pop/article/11/11/5204/261409/Slowly-varying-envelope-kinetic-simulations-of for the model used. 
+See https://pubs.aip.org/aip/pop/article/11/11/5204/261409/Slowly-varying-envelope-kinetic-simulations-of for the model used. The program (aKin.zip) consists of three files: **damped_pondermotive.m**, **solve_tridiag.m**, and **continuous_pump.m**.
 ### damped_pondermotive.m
 Main simulation file. Contains all simulation parameters and function calls. The laser envelopes are defined on a grid from 0 to xi_max with spacing dxi, which is set equal to the time step dt. The simulation time is set by T_max. Both pump and stokes are defined as Gaussian pulses centered at xp and xs respectively, with amplitudes apump and astokes, and widths sigma_p and sigma_s.<br />
 Each laser grid has ppb number of particles (bin), and the particles are seeded uniformly in phase space (P and Phi) in each bin.
@@ -51,6 +51,8 @@ The method employs an RK4 solver for particles and solves laser evolution using 
     - Propagate lasers<br />
 ### solve_tridiag.m
 A simple tridiagonal solver used as a helper function in dampled_pondermotive.m
+### continuous_pump.m
+Same as damped_pondermotive but with a continuous pump laser input.
 ## three_wave.m: simple solution to the fluid three-wave equation
 A MATLAB implementation of the three-wave equation (See, e.g., https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.84.1208). A standard Runge-Kutta solver (RK4) is implemented.
 
