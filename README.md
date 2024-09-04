@@ -42,9 +42,9 @@ See https://pubs.aip.org/aip/pop/article/11/11/5204/261409/Slowly-varying-envelo
 Main simulation file. Contains all simulation parameters and function calls. The laser envelopes are defined on a grid from 0 to xi_max with spacing dxi, which is set equal to the time step dt. The simulation time is set by T_max. Both pump and stokes are defined as Gaussian pulses centered at xp and xs respectively, with amplitudes apump and astokes, and widths sigma_p and sigma_s.<br />
 Each laser grid has ppb number of particles (bin), and the particles are seeded uniformly in phase space (P and Phi) in each bin.
 The method employs an RK4 solver for particles and solves laser evolution using a tridiagonal solver. The pseudo-code is as follows:<br />
-(1) Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first row<br />
-(2) Create a 3D-array that stores particle bins (nxi) with a certain number of particles (ppb) for each time step (nt)<br />
-(3) Enter the outer time loop<br />
+1. Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first row<br />
+2. Create a 3D-array that stores particle bins (nxi) with a certain number of particles (ppb) for each time step (nt)<br />
+3. Enter the outer time loop<br />
     - Calculate the bounce frequency<br />
       Enter the spatial loop<br />
     * Calculate pondermotive phase (same for each laser gridpoint) and currents<br />
