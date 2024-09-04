@@ -5,7 +5,7 @@ See https://ieeexplore.ieee.org/document/806589 for the model used. The program 
 ### LASER.py
 This file includes the definition for the class LASER, which holds all simulation parameters for SBS run. The main simulation function, and all helper function use this class to reduce the number of used parameters. LASER is compiled with numba’s @jitclass. This class initializes pump and stokes pulses. All real attributes are stored in single-precision floating-point format (float32), and pump and stokes pulses are stored as double-precision complex numbers (complex128). At the beginning of each simulation, a LASER object is initialized and used throughout the simulation.
 ### brillouin_pusher.py
-This is the main simulation file. It implements the function brillouin_push which calculates each step of pump and stokes propagation through the Brillouin-active medium using the split-step-fourier-method (SSFM). The pseudo-code for the SSFM process is as follows:<br />
+This is the main simulation file. It implements the function brillouin_push which calculates each step of pump and stokes propagation through the Brillouin-active medium using the split-step-fourier-method (SSFM). The pseudo-code for the SSFM process is as follows.<br />
 1. Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first column<br />
 2. Apply aliasing filter to the gain function and the temporal frequencies that will be used throughout all steps<br />
 3. Enter outer time loop<br />
@@ -14,7 +14,7 @@ This is the main simulation file. It implements the function brillouin_push whic
      - Compute the effect of propagating operator, and store in history arrays<br />
      - Create array for convolution integral calculations<br />
      - Enter inner space loop<br />
-          * Calculate convolution integrals for each gridpoint as in Eq.(8), and store them in the previously created array<br />
+          * Calculate convolution integrals for each gridpoint and store them in the previously created array<br />
      - Apply nonlinearity operator to A1, A2, and store results in history arrays<br />
 ### simulator.py
 Using simulator.py, the laser object can be initialized. For example,
@@ -41,7 +41,7 @@ See https://pubs.aip.org/aip/pop/article/11/11/5204/261409/Slowly-varying-envelo
 ### damped_pondermotive.m
 Main simulation file. Contains all simulation parameters and function calls. The laser envelopes are defined on a grid from 0 to xi_max with spacing dxi, which is set equal to the time step dt. The simulation time is set by T_max. Both pump and stokes are defined as Gaussian pulses centered at xp and xs respectively, with amplitudes apump and astokes, and widths sigma_p and sigma_s.<br />
 Each laser grid has ppb number of particles (bin), and the particles are seeded uniformly in phase space (P and Phi) in each bin.
-The method employs an RK4 solver for particles and solves laser evolution using a tridiagonal solver. The pseudo-code is as follows:<br />
+The method employs an RK4 solver for particles and solves laser evolution using a tridiagonal solver. The pseudo-code is as follows.<br />
 1. Create 2D-arrays to store evolution of pump and stokes, and store the initial pulse profiles as the first row<br />
 2. Create a 3D-array that stores particle bins (nxi) with a certain number of particles (ppb) for each time step (nt)<br />
 3. Enter the outer time loop<br />
