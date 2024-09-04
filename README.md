@@ -3,19 +3,19 @@ Numerical simulations of laser pulse compression in gases via stimulated Brillou
 ## Split-Step Fourier Method Solution for Transient SBS
 See https://ieeexplore.ieee.org/document/806589 for the model used. The program (SSFM.zip) consists of three files: **LASER.py**, **brillouin_pusher.py**, and **simulator.py**, which implement the simulation parameter class, helper functions, and the simulation function call repectively. The class file and the simulation file are detailed below. simulator.py simply exectutes all the function calls defined in the two other files.
 ### LASER.py
-This file includes the definition for the class LASER, which holds all simulation parameters for SBS run. The main simulation function, and all helper function use this class to reduce the number of used parameters. LASER is compiled with numba’s @jitclass. This class initializes two pump and stokes pulses to be later used in simulation.
-**Attributes**\\
-xmax, tmax: maximum spatial/temporal window size
-xgrid, tgrid: spatial/temporal step
-sigp, sigs: width of pump/stokes pulse (in step units)
-xp, xs: central point of pump/stokes pulse (in step units)
-apump, astokes: amplitude of pump/stokes
-n: refractive index of the Brillouin-active medium
-G: Brillouin linewidth
-omega: Brillouin frequency shift
-x, t: spatial/temporal grid
-pump: array for pump profile. Profile 1: Gaussian; profile 2: flat-top Gaussian
-stokes: array for stokes profile, always Gaussian
+This file includes the definition for the class LASER, which holds all simulation parameters for SBS run. The main simulation function, and all helper function use this class to reduce the number of used parameters. LASER is compiled with numba’s @jitclass. This class initializes two pump and stokes pulses to be later used in simulation.<br />
+**Attributes**
+-xmax, tmax: maximum spatial/temporal window size
+-xgrid, tgrid: spatial/temporal step
+-sigp, sigs: width of pump/stokes pulse (in step units)
+-xp, xs: central point of pump/stokes pulse (in step units)
+-apump, astokes: amplitude of pump/stokes
+-n: refractive index of the Brillouin-active medium
+-G: Brillouin linewidth
+-omega: Brillouin frequency shift
+-x, t: spatial/temporal grid
+-pump: array for pump profile. Profile 1: Gaussian; profile 2: flat-top Gaussian
+-stokes: array for stokes profile, always Gaussian
 All real attributes are stored in single-precision floating-point format (float32), and pump and stokes pulses are stored as double-precision complex numbers (complex128). At the beginning of each simulation, a LASER object is initialized and used throughout the simulation.
 ### brillouin_pusher.py
 This is the main simulation file. It implements the function brillouin push which calculates each step of pump and stokes propagation through the Brillouin-active medium using the split-step-fourier-method (SSFM). The pseudo-code for the SSFM process is as follows:
