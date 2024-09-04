@@ -49,7 +49,7 @@ The method employs an RK4 solver for particles and solves laser evolution using 
     - Enter the spatial loop<br />
          * Calculate pondermotive phase (same for each laser gridpoint) and currents<br />
          * Enter the particle loop<br />
-                ** Solve the equation of motion of each particle using RK4.<br />
+              ** Solve the equation of motion of each particle using RK4.<br />
     - Propagate lasers<br />
 ### solve_tridiag.m
 A simple tridiagonal solver used as a helper function in dampled_pondermotive.m
